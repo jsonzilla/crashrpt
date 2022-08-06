@@ -1,6 +1,6 @@
-======= Change History ========
+### Changelog
 
---- Ver. 1.4.3 ---
+### Ver. 1.4.3
 
 - New: Crash log files are now saved under Logs subdirectory of error report directory.
        A crash log file is named like CrashRpt-Log-<date>-<time>-{<crashguid>}.txt.
@@ -10,7 +10,7 @@
 
 - New: Added CR_INSTALL_INFO::nRestartTimeout structure field. Using this parameter,
        you can override the default app restart timeout (60 seconds).
-	   
+
 - New: added Slovak language file (contributed by Zoltan Tirinda)
 - New: added Japaneze language file (contributed by devil.tamachan)
 - New: added Czech language file (contributed by Petr Pytelka)
@@ -18,28 +18,28 @@
 
 - Fixed: Crashsender SMTP sendMsg - Errorhandling (issue 200)
 - Fixed: pfnCrashCallback2 is missing in tagCR_INSTALL_INFOW (issue 211)
-- Fixed: Version 1402 does not include files attached with "crAddFile2" in case of 
+- Fixed: Version 1402 does not include files attached with "crAddFile2" in case of
        a long path name (issue 209)
 - Fixed: Few issues with static code analysis (issue 220)
 - Fixed: Wrong screen video capture video with multi screen (issue 215)
-- Fixed: crAddScreenshot2() nJpegQuality is only used for the first error report 
+- Fixed: crAddScreenshot2() nJpegQuality is only used for the first error report
        then it is always set to 0 (issue 217)
-- Fixed: Added file changes (renamed, moved, removed, etc.) within a 
+- Fixed: Added file changes (renamed, moved, removed, etc.) within a
        client program's running session (issue 219)
-- Fixed: Adding custom properties with same name results in CrashSender.exe assertion 
+- Fixed: Adding custom properties with same name results in CrashSender.exe assertion
        failure (issue 216).
-- Fixed: 'Attach More Files' : Adding large amount of files (over >= 10) 
+- Fixed: 'Attach More Files' : Adding large amount of files (over >= 10)
        unsuccessfully (issue 218)
 - Fixed: Also add your x64 version of dbghelp.dll to the distributed file (issue 199)
 
---- Ver. 1.4.2 ---
+### Ver. 1.4.2
 
-- New: Added an ability to add multiple files to crash reports with crAddFile2() 
+- New: Added an ability to add multiple files to crash reports with crAddFile2()
        using file search pattern (e.g. "*.log"). This implements feature request
        described in issue 190.
 
-- New: Added new flag CR_INST_AUTO_THREAD_HANDLERS allowing to 
-       install/uninstall exception handlers automatically in DllMain() 
+- New: Added new flag CR_INST_AUTO_THREAD_HANDLERS allowing to
+       install/uninstall exception handlers automatically in DllMain()
        on DLL_THREAD_ATTACH/DETACH (issue 185).
 
 - New: adjusting dump privileges to avoid error 'Only part of a ReadProcessMemory
@@ -49,22 +49,22 @@
 - Fixed: Video division by zero (issue 189)
 - Fixed: Video missing from report (issue 187)
 - Fixed: No crash data is sent to URL when we have a redirect (Issue 191)
-- Fixed: CCrashHandler.m_hWndVideoParent not initialized to a 
+- Fixed: CCrashHandler.m_hWndVideoParent not initialized to a
          default value (issue 195)
 
 
---- Ver. 1.4.1 ---
+### Ver. 1.4.1
 
 - New: Added an ability to preview OGG video files in Error Report Details dialog.
        To preview a file, select it in the list of files.
 
 - New: Added an bility for end user to delete screenshots, registry keys and video file
-       from crash report through context menu of Error Report Details dialog 
+       from crash report through context menu of Error Report Details dialog
        (added CR_AS_ALLOW_DELETE flag for crAddScreenshot2() function,
         CR_AR_ALLOW_DELETE flag for crAddRegKey() function and CR_AV_ALLOW_DELETE
-        flag for crAddVideo() function). (issue 183) 
+        flag for crAddVideo() function). (issue 183)
 
-- New: Added back the crExceptionFilter() function removed previously as deprecated. 
+- New: Added back the crExceptionFilter() function removed previously as deprecated.
        It seems that some users require that function. (issue 175).
 
 - New: Extended unit tests (added ExceptionHandlerTests) (issue 114)
@@ -76,15 +76,15 @@
 - Fixed: Running crprober on windows 7 results in no stack trace output (issue 182)
 
 
---- Ver. 1.4.0 ---
+### Ver. 1.4.0
 
-- New: CrashRpt is now able to capture end user's desktop and record what happened 
-       just before crash to an .ogg video file and include the file to crash report. 
-       The recorded information may help the software vendor to better understand 
-       what actions the end user performed before client application crashed and 
-       reproduce the error (issue 122). 
+- New: CrashRpt is now able to capture end user's desktop and record what happened
+       just before crash to an .ogg video file and include the file to crash report.
+       The recorded information may help the software vendor to better understand
+       what actions the end user performed before client application crashed and
+       reproduce the error (issue 122).
 
-- New: Added new crAddVideo() function to record the desktop state to a video file 
+- New: Added new crAddVideo() function to record the desktop state to a video file
        and add the file to crash report.
 
 - New: Added code of Theora video codec and OGG container (libtheora and libogg).
@@ -108,26 +108,26 @@
 - Fixed: Can not restart application. Use CR_INST_APP_RESTART flag (issue 165)
 
 
---- Ver. 1.3.1 ---
+### Ver. 1.3.1
 
-- New: Removed support of obsolete Visual Studio .NET 2003. 
+- New: Removed support of obsolete Visual Studio .NET 2003.
 
-- New: Removed deprecated functions crAddFileA(), crAddFileW(), 
-       crInstallToCurrentThread(), crExceptionFilter() and deprecated 
+- New: Removed deprecated functions crAddFileA(), crAddFileW(),
+       crInstallToCurrentThread(), crExceptionFilter() and deprecated
        constant CR_WIN32_STRUCTURED_EXCEPTION.
 
 - New: Improved robustness to stack overflow (issue 121). Now stack overflow is handled
        in separate thread makeing CrashRpt more robust to problem of not enogh stack memory.
-       
+
 - New: Added constant CR_STACK_OVERFLOW that can be passed to crEmulateCrash() function
        to cause stack overflow.
 
 - New: Added an ability to attach more files to error report or delete selected files
        from error report through context menu of Error Report Details dialog (issue 132).
-       Introduced new flag CR_INST_ALLOW_ATTACH_MORE_FILES for crInstall() function. 
+       Introduced new flag CR_INST_ALLOW_ATTACH_MORE_FILES for crInstall() function.
 
-- New: Added new CR_AF_ALLOW_DELETE flag for crAddFile2() function. If this flag is specified, 
-       the user will be able to delete the file from error report using context menu of 
+- New: Added new CR_AF_ALLOW_DELETE flag for crAddFile2() function. If this flag is specified,
+       the user will be able to delete the file from error report using context menu of
        Error Report Details dialog. (issue 132)
 
 - New: Added support of SMTP authentication (AUTH LOGIN) (Issue 143).
@@ -137,21 +137,21 @@
        is  saved and stored in ~CrashRpt.ini file. When a crash occurs
        later, the address is filled in automatically. (issue 155)
 
-- New: Added CR_INST_SEND_MANDATORY flag. This flag removes the "Close" and "Other actions" 
-       buttons from Error Report dialog, thus making the sending procedure mandatory for user 
+- New: Added CR_INST_SEND_MANDATORY flag. This flag removes the "Close" and "Other actions"
+       buttons from Error Report dialog, thus making the sending procedure mandatory for user
        (issue 126).
 
-- New: Added CR_INST_SHOW_ADDITIONAL_INFO_FIELDS flag. This flag makes "Your E-mail" and 
-       "Describe what you were doing when the problem occurred" fields of Error Report 
+- New: Added CR_INST_SHOW_ADDITIONAL_INFO_FIELDS flag. This flag makes "Your E-mail" and
+       "Describe what you were doing when the problem occurred" fields of Error Report
        dialog always visible. By default (when this parameter not specified),
-       those fields are hidden and user needs to click the "Provide additional info 
+       those fields are hidden and user needs to click the "Provide additional info
        (recommended)" link to show them (issue 129).
 
-- New: Introduced command line parameter /terminate for CrashSender.exe. 
-       This resolves a problem with installers that will want to update the exe file; 
+- New: Introduced command line parameter /terminate for CrashSender.exe.
+       This resolves a problem with installers that will want to update the exe file;
        there was no way to tell the sender exe program to exit now (issue 142).
-       Launching "CrashSender.exe /terminate" would look for all open CrashSender.exe processes 
-       and terminate them immediately (without sending reports or waiting for completion). 
+       Launching "CrashSender.exe /terminate" would look for all open CrashSender.exe processes
+       and terminate them immediately (without sending reports or waiting for completion).
        Terminating the process is acomplished with TerminateProcess(hProcess) function.
 
 - New: Reorganized demos (moved to demos folder and renamed CrashRptTest=>WTLDemo, crashcon=>ConsoleDemo).
@@ -159,7 +159,7 @@
 - New: Added new demo application - MFCDemo. This is to demonstrate usage of CrashRpt
        with MFC-based apps.
 
-- New: Refactored code of CrashSender project making it more conforming to 
+- New: Refactored code of CrashSender project making it more conforming to
        the Model-View-Controller methodology.
 
 - Fixed: Impossible to send Crash reports in Windows 7 64bits (issue 104).
@@ -186,7 +186,7 @@
 - Fixed: Order of custom properties (issue 131).
 
 
---- Ver. 1.3.0 ---
+### Ver. 1.3.0
 
 - Added support of CMake - cross-plaform make system. Although CrashRpt doesn't support operating systems
   other than Windows, CMake makes it easier to maintain build configurations for different versions of Visual Studio.
@@ -194,8 +194,8 @@
 
 - Added instructions to the documentation on how to generate Visual Studio project files with CMake.
 
-- Removed project files for Visual Studio 2003 (CrashRpt_v2003.sln) and Visual Studio 2005 (CrashRpt_v2005.sln). 
-  To compile in VS2010, use Visual Studio 2010 project files (or use CMake to generate Visual Studio project 
+- Removed project files for Visual Studio 2003 (CrashRpt_v2003.sln) and Visual Studio 2005 (CrashRpt_v2005.sln).
+  To compile in VS2010, use Visual Studio 2010 project files (or use CMake to generate Visual Studio project
   files for your favorite version of Visual Studio).
 
 - Binary files now have version suffices (CrashRpt1300.dll, CrashRptProbe1300.dll and CrashSender1300.exe). This is
@@ -221,7 +221,7 @@
 - Fixed: Wrong handling of dwFlags when setting handlers (issue 109)
 - Fixed: SMTP fails if Date header missing (issue 110)
 
---- Ver. 1.2.10 ---
+### Ver. 1.2.10
 
 - Added new language files: German, Spanish, French, Hindi, Italian, Korean, Portuguese and Chinese Simplified.
   Some of these files were produced by professional translators (Korean, Chinese Simplified), but others
@@ -243,7 +243,7 @@
 
 - Fixed: CrashSender manifest file prevents CrashSender from launching in x64 (issue 87)
 
---- Ver. 1.2.9 ---
+### Ver. 1.2.9
 
 - Compiler/linker output for x64 platform is now directed to bin\x64, while output dir for Win32 platform
   is the same (bin) (issue 77).
@@ -260,7 +260,7 @@
 - Fixed: If I pass the short name for the path to crash report, it failed to create the directory (issue 78)
 
 
---- Ver. 1.2.8 ---
+### Ver. 1.2.8
 
 - Added JPEG library code from Independent Jpeg Group.
 
@@ -283,7 +283,7 @@
 
 - New sections of documentation: Running automated tests and Making Your Code Robust.
 
-- Refactored Tests project (removed unneeded functionality). Additional test cases. 
+- Refactored Tests project (removed unneeded functionality). Additional test cases.
   New test suite DeliveryTests. Tests now work even for Release LIB build configuration.
 
 - Improved Doxyfile, removed search index and now the documentation should take less disk space.
@@ -315,10 +315,10 @@
 - fix: Registry keys with ampersand (&) are not dumped (issue 71)
 
 
---- Ver. 1.2.7 ---
+### Ver. 1.2.7
 
-- Added Tests project that implements automated tests for CrashRpt and 
-  CrashRptProbe functionality. 
+- Added Tests project that implements automated tests for CrashRpt and
+  CrashRptProbe functionality.
 
 - Reorganized directory structure to better reflect architecture.
 
@@ -338,7 +338,7 @@
 
 - New column CRP_COL_EXCEPTION_THREAD_STACK_MD5 for CRP_TBL_MDMP_MISC table.
 
-- Fixed issue with Chineese symbols in app name (issue 54). 
+- Fixed issue with Chineese symbols in app name (issue 54).
 
 - Improved CFilePreviewCtrl to support UTF-8 and UTF-16 encoding (issue 56). Also improved
   WM_MOUSEWHEEL message handling (scrolling preview by mouse wheel).
@@ -360,7 +360,7 @@
 
 - Fixed DNS access problem for SMTP proxy (issue 51).
 
---- Ver. 1.2.6 ---
+### Ver. 1.2.6
 
 - Added project files for Visual Studio 2010 (issue 35).
 
@@ -369,13 +369,13 @@
 - Extended crEmulateCrash(), new constant CR_THROW -- tests how a thrown C++
   exception is intercepted (issue 35).
 
-- Fixed: exit(1) in different thread may cause crashes (issue 43). Now using 
+- Fixed: exit(1) in different thread may cause crashes (issue 43). Now using
   TerminateProcess() instead of exit() or ExitProcess().
 
 - Fixed: Error report is sent twice if crashes in a DLL (issue 44). Using crash
   counter variable to avoid multiple crash report generation.
 
---- Ver. 1.2.5 ---
+### Ver. 1.2.5
 
 - Introduced an ability to send error reports queued for delivery (issue 33).
   New flag CR_INST_SEND_QUEUED_REPORTS.
@@ -392,13 +392,13 @@
 
 - Refactored php example of how to receive error reports by HTTP.
 
-- Extended documentation. 
+- Extended documentation.
 
---- Ver. 1.2.4 ---
+### Ver. 1.2.4
 
 - Introduced an ability to restart an application automatically on crash. The application is
   restarted only if at least 60 seconds have elapsed since its start. This is done to avoid cyclic
-  restarts of an unstable application which crashes on start up. This is the enhancement requested 
+  restarts of an unstable application which crashes on start up. This is the enhancement requested
   in issue 11.
 
 - Introduced an ability to preview graphics files (BMP, PNG) in Details dialog. This is useful if a user
@@ -412,13 +412,13 @@
 - An ability to specify custom directory and file name for the language file. This will be useful for applications
   that need to modify UI language on the fly. This is requested in issue 34.
 
-- An ability to disable particular error report sending transport by specifying a negative priority in 
+- An ability to disable particular error report sending transport by specifying a negative priority in
   CR_INSTALL_INFO::uPriorities array.
 
 - An ability to specify SMTP proxy for built-in SMTP client. This may be useful for server-side software that
   would need to configure SMTP transport without querying DNS MX (mail exchange) record.
 
---- Ver. 1.2.3 ---
+### Ver. 1.2.3
 
 - Improved file preview in DetailDlg. Now a file can be previewed in HEX or in text mode.
 
@@ -434,7 +434,7 @@
   There may be some people using Release LIB configuration, so the configuration was made up-to-date.
 
 
---- Ver. 1.2.2 ---
+### Ver. 1.2.2
 
 - WTL files are now included into CrashRpt distribution.
 
@@ -447,7 +447,7 @@
 - Refactored code. After crash, all complex actions are done outside of the crashed process (inside of CrashSender.exe).
   This includes taking desktop screenshot, minidump generation, file copying, file compression and sending.
 
-- Introduced silent mode (CrashRpt sends report silently without showing GUI). 
+- Introduced silent mode (CrashRpt sends report silently without showing GUI).
   This is useful for services and server processes.
 
 - Improved documentation (restyling).
@@ -467,15 +467,15 @@
 
 - New: Introduced an ability to export error report through "Export..." button on Error Report Details dialog.
 
---- Ver. 1.2.1 ---
+### Ver. 1.2.1
 
-- Refactored crash report generation and sending functionality. Now report files are stored 
+- Refactored crash report generation and sending functionality. Now report files are stored
   in unzipped state, compression is performed during sending procedure. This will be required for
   huge reports (that will be fully supported in the future).
 
 - Added support of x64 platform (issue 7).
 
-- Added an ability to make screenshots of the screen or the main app window on crash 
+- Added an ability to make screenshots of the screen or the main app window on crash
   through crAddScreenshot() function (issue 8).
 
 - More information is collected on crash (memory usage, open handles count and GUI resources)
@@ -486,7 +486,7 @@
 
 - Ability to control which dbghelp.dll to use (issue 10).
 
-- Ability to define the type of minidump (from normal size to huge size) (issue 10). 
+- Ability to define the type of minidump (from normal size to huge size) (issue 10).
   Contributed by crcode.s.
 
 - Fixed incorrectly displayed file size in DetailsDlg (issue 14).
@@ -495,7 +495,7 @@
 
 - Fixed: Access to CCrashHandler::m_ThreadExceptionHandlers should be synchronized (issue 16).
 
---- Ver. 1.2.0 ---
+### Ver. 1.2.0
 
 - Reorgranized the include files; moved from 'CrashRpt\include' to 'include'.
 
@@ -510,17 +510,17 @@
 
 - Extended documentation : new section 'Automating Error Report Processing'.
 
---- Ver. 1.1.3 ---
+### Ver. 1.1.3
 
 - Support of globalization and RTL languages.
 
 - Reorganized and improved documentation; New pages Architecture Overview and
   Internationalization Support.
 
-- Added <?xml version="1.0" encoding="utf-8" ?> element in the 
+- Added <?xml version="1.0" encoding="utf-8" ?> element in the
   beginning of crash descriptor XML.
 
---- Ver. 1.1.2 ---
+### Ver. 1.1.2
 
 - crInstall: Ability to select what exception handlers to install
 
@@ -530,7 +530,7 @@
 
 - Improved documentation; Fixed some mistakes; Added info on compiling CrashRpt in VC++ Express
 
-- Using standard Windows convention __stdcall instead of __cdecl in API function declarations 
+- Using standard Windows convention __stdcall instead of __cdecl in API function declarations
 
 - Using undecorated API function names (extern "C")
 
@@ -542,8 +542,8 @@
 
 - Fixed wrong "unh" message box in unhandled exception handler
 
-- Fixed bug in CUtility::GetOSFriendlyName() -- Operating system build 
-  number and service pack are never retrieved 
+- Fixed bug in CUtility::GetOSFriendlyName() -- Operating system build
+  number and service pack are never retrieved
 
 - Fixed error with writing 'ExceptionCode' to XML (always zero)
 
@@ -552,7 +552,7 @@
 - Refactored code of crEmulateCrash()
 
 
---- Ver. 1.1.1 ---
+### Ver. 1.1.1
 
 - Support of Visual Studio Express edition (EVS 2005 and EVS 2008)
 
@@ -560,7 +560,7 @@
 
 - New wrapper classes CrAutoInstallHelper and CrThreadAutoInstallHelper
 
-- MD5 hash for error report is calculated and attached to email 
+- MD5 hash for error report is calculated and attached to email
   when error report is sent over email
 
 - Error report is removed when sent successfuly
@@ -574,7 +574,7 @@
 
 - Fixed many VS-version-specific bugs
 
---- Ver. 1.1 ---
+### Ver. 1.1
 
 
 Major Features:
@@ -591,7 +591,7 @@ Major Features:
 
 - Support of various C++ exception handlers (Visual Studio-specific)
 
-- Crash report generation and crash sending functionality are separeted into 
+- Crash report generation and crash sending functionality are separeted into
   different modules (CrashRpt.dll and CrashSender.exe)
 
 - New ways of sending error reports: using HTTP connection, using SMTP embed client or
@@ -612,14 +612,12 @@ Minor features:
 
 - Using TinyXml framework instead of MSXML
 
-- Using the latest version (at the moment) of dbghelp 
+- Using the latest version (at the moment) of dbghelp
 
 - Using the latest version (at the moment) of zlib
 
 
---- Ver. 1.0 ---
-
-
+#### Ver. 1.0
     * 03/17/2003
           o Replaced MFC with WTL.
           o Changed crashrpt interface.
@@ -629,6 +627,7 @@ Minor features:
           o Directory structure not saved in ZIP.
           o Support for use by multiple apps.
           o Buffer overrun error when previewing files > 32k.
-          o Main dialog now displays app icon. 
+          o Main dialog now displays app icon.
     * 01/12/2003
-          o Initial release. 
+          o Initial release.
+

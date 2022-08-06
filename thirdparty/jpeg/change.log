@@ -2,7 +2,7 @@ CHANGE LOG for Independent JPEG Group's JPEG software
 
 
 Version 8b  16-May-2010
------------------------
+###--------------------
 
 Repair problem in new memory source manager with corrupt JPEG data.
 Thank to Ted Campbell and Samuel Chun for the report.
@@ -15,7 +15,7 @@ Thank to Volker Grabsch for the suggestion.
 
 
 Version 8a  28-Feb-2010
------------------------
+###--------------------
 
 Writing tables-only datastreams via jpeg_write_tables works again.
 
@@ -27,7 +27,7 @@ Thank to Robert Hooke for the hint.
 
 
 Version 8  10-Jan-2010
-----------------------
+###-------------------
 
 jpegtran now supports the same -scale option as djpeg for "lossless" resize.
 An implementation of the JPEG SmartScale extension is required for this
@@ -47,7 +47,7 @@ Thank to Roberto Boni from Italy for the suggestion.
 
 
 Version 7  27-Jun-2009
-----------------------
+###-------------------
 
 New scaled DCTs implemented.
 djpeg now supports scalings N/8 with all N from 1 to 16.
@@ -100,7 +100,7 @@ configuration prevents this. (DP 202_jpeglib.h_c++.dpatch)
 
 
 Version 6b  27-Mar-1998
------------------------
+###--------------------
 
 jpegtran has new features for lossless image transformations (rotation
 and flipping) as well as "lossless" reduction to grayscale.
@@ -165,7 +165,7 @@ no longer leak memory.
 
 
 Version 6a  7-Feb-96
---------------------
+###-----------------
 
 Library initialization sequence modified to detect version mismatches
 and struct field packing mismatches between library and calling application.
@@ -205,7 +205,7 @@ Numerous small documentation updates.
 
 
 Version 6  2-Aug-95
--------------------
+###----------------
 
 Progressive JPEG support: library can read and write full progressive JPEG
 files.  A "buffered image" mode supports incremental decoding for on-the-fly
@@ -233,7 +233,7 @@ the height of every access.
 
 
 Version 5b  15-Mar-95
----------------------
+###------------------
 
 Correct bugs with grayscale images having v_samp_factor > 1.
 
@@ -250,7 +250,7 @@ Miscellaneous improvements to documentation.
 
 
 Version 5a  7-Dec-94
---------------------
+###-----------------
 
 Changed color conversion roundoff behavior so that grayscale values are
 represented exactly.  (This causes test image files to change.)
@@ -278,7 +278,7 @@ but unreadable.
 
 
 Version 5  24-Sep-94
---------------------
+###-----------------
 
 Version 5 represents a nearly complete redesign and rewrite of the IJG
 software.  Major user-visible changes include:

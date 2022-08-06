@@ -1,39 +1,39 @@
 =========================================================
 Language Files Change Log
 
-This info may be helpful when updating language files from 
+This info may be helpful when updating language files from
 a previous version to the latest version.
 
 =========================================================
 
---- v.1.4.3 ---
+### v.1.4.3 ---
 
    No changes
 
---- v.1.4.2 ---
+### v.1.4.2 ---
 
    No changes
-  
---- v.1.4.1 ---
+
+### v.1.4.1 ---
 
  * In [DetailDlg]
   - PreviewVideo - new
 
---- v.1.4.0 ---
+### v.1.4.0 ---
 
  * In [DetailDlg]
   - DescVideo - new
  * New section [VideoRecDlg]
- 
 
---- v.1.3.1 ---
+
+### v.1.3.1 ---
 
  * In [DetailDlg]
   - Open - new
   - DeleteSelected - new
   - AttachMoreFiles - new
 
---- v.1.3.0 ---
+### v.1.3.0 ---
 
  * In [DetailDlg]
   - SelectAll - new
@@ -41,15 +41,15 @@ a previous version to the latest version.
   - DeleteSelected - new
   - DeleteAll - new
 
---- v.1.2.10 ---
+### v.1.2.10 ---
 
   No changes
 
---- v.1.2.9 ---
+### v.1.2.9 ---
 
   No changes
 
---- v.1.2.8 ---
+### v.1.2.8 ---
 
  * In [DetailDlg]
   - DescCrashDump - new
@@ -57,23 +57,23 @@ a previous version to the latest version.
   - DescScreenshot - new
   - DescRegKey - new
 
---- v.1.2.7 ---
+### v.1.2.7 ---
 
  * In [DetailDlg]
   - TextEncoding - new
 
---- v.1.2.6 ---
+### v.1.2.6 ---
 
  * In [DetailDlg]
   - Type - removed
 
---- v.1.2.5 ---
+### v.1.2.5 ---
 
  * In [MainDlg] section:
   - SubHeaderText - modified
   - OtherActions - new
   - SendReportLater - new
- 
+
  * New section [ResendDlg]:
   - ColumnCreationDate
   - ColumnSize
@@ -93,11 +93,11 @@ a previous version to the latest version.
   - StatusSuccess
   - StatusFailed
   - CurrentAction
-  - DeliveryingReports 
+  - DeliveryingReports
   - DeliverySucceeded
   - DeliveryFailed
 
---- v.1.2.4 ---
+### v.1.2.4 ---
 
 The following strings have changed:
 
@@ -107,7 +107,7 @@ The following strings have changed:
  * In [DetailDlg] section:
    - PreviewImage - new
 
---- v.1.2.3 ---
+### v.1.2.3 ---
 
 The following strings have changed:
 
@@ -117,7 +117,7 @@ The following strings have changed:
    - PreviewText - new
    - PreviewHex - new
 
---- v.1.2.2 ---
+### v.1.2.2 ---
 
 The following strings have changed:
 
@@ -128,7 +128,7 @@ The following strings have changed:
    - DlgCaptionExport - new
    - ExportedWithErrors - new
 
---- v.1.2.1 ---
+### v.1.2.1 ---
 
 The following strings have changed:
 
@@ -137,7 +137,7 @@ The following strings have changed:
    - MyConsent2 - new
 
  * In [ProgressDlg] section:
-   - DlgCaption - modified 
+   - DlgCaption - modified
    - DlgCaption2 - new
    - CollectingCrashInfo - new
    - CompressingFiles - new
